@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-04-feedback",
+  "name": "react-feedback-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://iberikofer.github.io/goit-react-hw-04-feedback/",
+  "homepage": "https://iberikofer.github.io/react-feedback-page/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
