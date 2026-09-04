@@ -1,16 +1,27 @@
+import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Section.module.css';
 
-const Section = ({ title, children }) => {
+export const Section = ({ title, children, className = '' }) => {
+  const sectionId = `section-${title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+
   return (
-    <div>
-      <h2 style={{ textAlign: 'center' }}>{title}</h2>
+    <section
+      className={`${css.section} ${className}`.trim()}
+      aria-labelledby={sectionId}
+    >
+      <h2 id={sectionId} className={css.title}>
+        {title}
+      </h2>
       {children}
-    </div>
+    </section>
   );
 };
 
-export default Section;
-
 Section.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
+
+export default Section;

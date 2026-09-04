@@ -1,15 +1,25 @@
+import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Notification.module.css';
 
-const Notification = ({ message }) => {
+export const Notification = ({
+  message = 'There is no feedback yet',
+  title = 'No Feedback Given',
+}) => {
   return (
-    <div>
-      <h4>{message}</h4>
+    <div className={css.container} role="status" aria-live="polite">
+      <span className={css.icon} role="img" aria-hidden="true">
+        📊
+      </span>
+      <h3 className={css.title}>{title}</h3>
+      <p className={css.message}>{message}</p>
     </div>
   );
 };
 
-export default Notification;
-
 Notification.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
+  title: PropTypes.string,
 };
+
+export default Notification;
